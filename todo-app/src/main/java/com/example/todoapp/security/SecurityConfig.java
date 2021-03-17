@@ -22,8 +22,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests().antMatchers("/register", "/authenticate", "/logged").permitAll()
-                .and()
-                .authorizeRequests().anyRequest().authenticated()
+                .and().authorizeRequests()
+                .antMatchers("/swagger-resources/*", "*.html", "/api/v1/swagger.json")
+                .hasRole("SWAGGER")
+                .anyRequest().authenticated()
                 .and()
                 .httpBasic()
                 .and()
@@ -32,6 +34,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+
+
+//        http
+//                .authorizeRequests().antMatchers("/register", "/authenticate", "/logged").permitAll()
+//                .and()
+//                .authorizeRequests().anyRequest().authenticated()
+//                .and()
+//                .httpBasic()
+//                .and()
+//                .cors()
+//                .and()
+//                .csrf().disable()
+//                .sessionManagement()
+//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Override

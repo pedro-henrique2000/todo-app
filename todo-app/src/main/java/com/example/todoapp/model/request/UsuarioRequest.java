@@ -8,6 +8,7 @@ import javax.validation.constraints.*;
 public class UsuarioRequest {
 
     @Email(message = "Not valid email")
+    @NotBlank(message = "Not valid email")
     private String email;
 
     @NotBlank(message = "Not valid password")

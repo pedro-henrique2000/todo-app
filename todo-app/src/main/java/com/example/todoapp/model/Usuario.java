@@ -25,7 +25,7 @@ public class Usuario implements UserDetails {
     private String email;
     private String name;
     private String password;
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Task> taskList;
 
 

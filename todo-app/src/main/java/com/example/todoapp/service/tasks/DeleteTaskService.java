@@ -1,6 +1,6 @@
 package com.example.todoapp.service.tasks;
 
-import com.example.todoapp.exception.InvalidException;
+import com.example.todoapp.exception.NotFoundException;
 import com.example.todoapp.model.Task;
 import com.example.todoapp.model.Usuario;
 import com.example.todoapp.repository.TaskRepository;
@@ -25,7 +25,7 @@ public class DeleteTaskService {
         Task task = usuario.getTaskList().stream()
                 .filter(t -> t.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new InvalidException(String.format("Not found a task with id %d", id)));
+                .orElseThrow(() -> new NotFoundException(String.format("Not found a task with id %d", id)));
 
         List<Task> newTaskList = usuario.getTaskList().stream()
                 .filter(t -> t.getId() != id)
