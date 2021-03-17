@@ -12,9 +12,4 @@ public class HelloController {
         return new Greeting("hello");
     }
 
-    @GetMapping("/logged")
-    public String logged() {
-        return "Logged";
-    }
-
 }

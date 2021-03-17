@@ -6,7 +6,7 @@ import com.example.todoapp.model.request.UsuarioRequest;
 import com.example.todoapp.model.response.UsuarioResponse;
 import com.example.todoapp.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -16,6 +16,9 @@ public class RegisterUserService {
 
     @Autowired
     UsuarioRepository repository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     public UsuarioResponse register(UsuarioRequest request) {
         if(!request.getPassword().equals(request.getConfirmPassword()))
@@ -29,7 +32,7 @@ public class RegisterUserService {
         Usuario usuario = new Usuario();
         usuario.setEmail(request.getEmail());
         usuario.setName(request.getName());
-        usuario.setPassword(new BCryptPasswordEncoder().encode(request.getPassword()));
+        usuario.setPassword(passwordEncoder.encode(request.getPassword()));
 
         repository.save(usuario);
 

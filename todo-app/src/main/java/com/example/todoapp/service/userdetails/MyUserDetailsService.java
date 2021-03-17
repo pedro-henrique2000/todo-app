@@ -1,4 +1,4 @@
-package com.example.todoapp.service;
+package com.example.todoapp.service.userdetails;
 
 import com.example.todoapp.model.Usuario;
 import com.example.todoapp.repository.UsuarioRepository;
