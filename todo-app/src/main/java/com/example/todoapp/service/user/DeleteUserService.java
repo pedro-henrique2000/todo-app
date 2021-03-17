@@ -13,7 +13,7 @@ public class DeleteUserService {
     UsuarioRepository repository;
 
     public void delete(Long id) {
-        Usuario deleteUsuario = repository.findById(id).orElseThrow(() -> new InvalidException());
+        Usuario deleteUsuario = repository.findById(id).orElseThrow(() -> new InvalidException("Not found"));
         repository.delete(deleteUsuario);
     }
 
