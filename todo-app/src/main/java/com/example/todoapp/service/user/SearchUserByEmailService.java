@@ -13,9 +13,6 @@ import java.util.Optional;
 public class SearchUserByEmailService {
 
     @Autowired
-    UsuarioRepository repository;
-
-    @Autowired
     UsuarioRepository usuarioRepository;
 
     public Usuario find(String email){
