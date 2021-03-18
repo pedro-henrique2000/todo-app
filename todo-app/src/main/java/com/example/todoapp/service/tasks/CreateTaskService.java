@@ -39,6 +39,4 @@ public class CreateTaskService {
         return new TaskResponse(task.getDescription(), task.getConclusionPrevision(), task.getPriority());
 
     }
-
-
 }
