@@ -8,9 +8,6 @@ import com.example.todoapp.service.user.LoggedUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Service
 public class DeleteTaskService {
 
@@ -27,11 +24,7 @@ public class DeleteTaskService {
                 .findFirst()
                 .orElseThrow(() -> new NotFoundException(String.format("Not found a task with id %d", id)));
 
-        List<Task> newTaskList = usuario.getTaskList().stream()
-                .filter(t -> t.getId() != id)
-                .collect(Collectors.toList());
-
-        usuario.setTaskList(newTaskList);
+        usuario.getTaskList().removeIf(t -> t.getId() == id);
 
         taskRepository.delete(task);
     }
