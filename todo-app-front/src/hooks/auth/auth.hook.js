@@ -10,5 +10,10 @@ export function AuthApi() {
         return response.data
     }
 
-    return {login}
+    async function register(email, password, confirmPassword, name) {
+        const response = await httpClient.post("/register", {email, password, confirmPassword, name})
+        return response.data
+    }
+
+    return {login, register}
 }

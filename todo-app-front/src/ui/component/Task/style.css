@@ -1,0 +1,46 @@
+.task-container{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 200px;
+}
+
+.task-container header {
+    border-bottom: 1px solid black;
+}
+
+.urgent {
+    color: crimson;
+    border-bottom: 1px solid crimson;
+}
+
+.task-container header span {
+    font-weight: 700;
+}
+
+.remove-img {
+    margin: 10px;
+    width: 22px;
+    height: 22px;
+    background: url('delete.svg');
+    background-size: contain;
+    border: none;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.check-img {
+    margin: 10px;
+    width: 25px;
+    height: 25px;
+    background: url('check.png');
+    background-size: contain;
+    border: none;
+}

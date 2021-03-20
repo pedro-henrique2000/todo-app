@@ -1,0 +1,63 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow:         3px 3px 5px 6px #ccc;
+    padding: 20px;
+    background-color: white;
+    width: 400px;
+    border-radius: 30px;
+    margin: auto;
+}
+
+.form-container main form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px;
+}
+
+.form-container main button {
+    width: 100px;
+    height: 45px;
+    font-size: 16px;
+    border: none;
+    color: white;
+    background-color: #2ecc71;
+    margin-bottom: 15px ;
+    border-radius: 10px;
+    transition: 0.3s;
+    outline: none;
+}
+
+.form-container main button:hover {
+    background-color: #f2f2f2;
+    border: 1px solid #2ecc71;
+    color: #2ecc71;
+}
+
+.form-alert {
+    color: red;
+    font-size: 14px;
+}
+
+.form-success {
+    color: #2ecc71;
+    font-size: 14px;
+}
+
+.sign-up {
+    color: rgb(68, 96, 131);
+    text-decoration: none;
+}
+
+.sign-up:hover {
+    border-bottom: 1px solid rgb(68, 96, 131);
+}
+
+@media(max-width: 400px) {
+    .form-container {
+        width: 200px;
+    }
+}
