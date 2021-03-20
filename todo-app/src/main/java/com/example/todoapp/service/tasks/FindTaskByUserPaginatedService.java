@@ -32,7 +32,7 @@ public class FindTaskByUserPaginatedService {
         Page<Task> taskPage = taskRepository.findByUsuario(usuario, page);
 
         return taskPage.stream()
-                .map(t -> new TaskResponse(t.getDescription(), t.getConclusionPrevision(), t.getPriority()))
+                .map(t -> new TaskResponse(t.getId(), t.getDescription(), t.getConclusionPrevision(), t.getPriority(), t.isHasFinished()))
                 .collect(Collectors.toList());
     }
 

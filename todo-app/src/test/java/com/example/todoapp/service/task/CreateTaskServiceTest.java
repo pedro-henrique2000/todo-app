@@ -46,7 +46,7 @@ public class CreateTaskServiceTest {
         Mockito.when(loggedUserService.getLoggedUser()).thenReturn(usuario);
 
         TaskResponse expectedResponse =
-                new TaskResponse(taskRequest.getDescription(), taskRequest.getConclusionPrevision(), taskRequest.getPriority());
+                new TaskResponse(1L, taskRequest.getDescription(), taskRequest.getConclusionPrevision(), taskRequest.getPriority(), false);
 
         TaskResponse actualResponse = createTaskService.create(taskRequest);
 

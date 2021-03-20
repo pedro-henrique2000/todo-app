@@ -30,6 +30,4 @@ public class FinishTaskService {
         taskRepository.save(task);
     }
 
-
-
 }

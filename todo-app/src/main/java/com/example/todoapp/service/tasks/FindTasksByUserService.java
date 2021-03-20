@@ -26,7 +26,7 @@ public class FindTasksByUserService {
         List<Task> taskList = taskRepository.findByUsuario(usuario);
 
         return taskList.stream()
-                .map(t -> new TaskResponse(t.getDescription(), t.getConclusionPrevision(), t.getPriority()))
+                .map(t -> new TaskResponse(t.getId(), t.getDescription(), t.getConclusionPrevision(), t.getPriority(), t.isHasFinished()))
                 .collect(Collectors.toList());
     }
 
