@@ -23,7 +23,7 @@ public class HandleInvalidArgumentException {
         invalidError.setPath(req.getRequestURI());
         invalidError.setTimestamp(LocalDateTime.now());
         invalidError.setError("Validation Error");
-        invalidError.setMsg(ex.getBindingResult().getAllErrors()
+        invalidError.setMessage(ex.getBindingResult().getAllErrors()
                 .stream()
                 .findFirst()
                 .get()

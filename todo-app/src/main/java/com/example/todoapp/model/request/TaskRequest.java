@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 public class TaskRequest {
 
-    @Size(max = 50)
+    @Size(max = 25)
     @NotBlank(message = "Not valid description!")
     private String description;
 

@@ -35,19 +35,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
-
-//        http
-//                .authorizeRequests().antMatchers("/register", "/authenticate", "/logged").permitAll()
-//                .and()
-//                .authorizeRequests().anyRequest().authenticated()
-//                .and()
-//                .httpBasic()
-//                .and()
-//                .cors()
-//                .and()
-//                .csrf().disable()
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Override

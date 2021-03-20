@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @Service
 public class FindTaskByUserPaginatedService {
 
-    private static final int SIZE_PER_PAGE = 4;
+    private static final int SIZE_PER_PAGE = 10;
 
     @Autowired
     TaskRepository taskRepository;
