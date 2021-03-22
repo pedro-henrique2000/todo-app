@@ -5,7 +5,7 @@ import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 
 export function Header() {
-    const { isLogged, logout } = useContext(AuthContext)
+    const { isLogged, logout, name } = useContext(AuthContext)
 
     let history = useHistory()
 
@@ -14,20 +14,28 @@ export function Header() {
         history.push("/login")
     }
 
+    function handleReturn() {
+        history.goBack()
+    }
+
     return (
         <header className="header-container">
-            <div className="header-logo">
+            <img src="previous.png" className="return" onClick={handleReturn} alt="Return"/>
+            <Link className="header-logo" to="/">
                 <img src="./icon.png" alt="Logo do Site" />
                 <span>ToDo App</span>
-            </div>
+            </Link>
             <div className="header-info">
                 {isLogged ?
-                    <>
-                        <p>Olá, Pedro</p>
+                    <div className="header-logged">
+                        <p>Bem-Vindo {name} | </p>
                         <button onClick={handleLogout}>Logout</button>
-                    </>
+                    </div>
                     :
-                    <Link to="/login">Logar</Link>
+                    <div className="header-buttons">
+                        <Link to="/register">Sign up | </Link>
+                        <Link to="/login"> Sign in</Link>
+                    </div>
                 }
             </div>
         </header>

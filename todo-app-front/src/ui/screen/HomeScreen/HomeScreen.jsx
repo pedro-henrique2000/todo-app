@@ -6,7 +6,7 @@ export function HomeScreen() {
     return (
         <div className="home-container">
             <div className="home-info">
-                <img src="home.jpg"/>
+                <img src="home.jpg" alt="Home"/>
                 <div className="home-content">
                     <h1>Todo App</h1>
                     <p>

@@ -1,15 +1,15 @@
 import React from 'react'
 import './style.css'
 
-export function Input({name, handleChange, value, type}) {
+export function Input({ name, handleChange, value, type }) {
     function change(event) {
         handleChange(event.target.value)
     }
 
-    return(
+    return (
         <div className="label-container">
             <label className="label">
-                <input 
+                <input
                     value={value}
                     type={type}
                     name={name}

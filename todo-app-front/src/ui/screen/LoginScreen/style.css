@@ -18,7 +18,7 @@
     margin: 12px;
 }
 
-.form-container main button {
+.form-container main .button {
     width: 100px;
     height: 45px;
     font-size: 16px;
@@ -29,6 +29,7 @@
     border-radius: 10px;
     transition: 0.3s;
     outline: none;
+    margin-top: 5px;
 }
 
 .form-container main button:hover {

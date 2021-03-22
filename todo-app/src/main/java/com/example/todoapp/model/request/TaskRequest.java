@@ -16,7 +16,7 @@ public class TaskRequest {
     @NotBlank(message = "Not valid description!")
     private String description;
 
-    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    @JsonFormat(pattern = "yyyy/MM/dd", shape = JsonFormat.Shape.STRING)
     @ApiModelProperty(required = true, example = "2021-08-20")
     private LocalDate conclusionPrevision;
 

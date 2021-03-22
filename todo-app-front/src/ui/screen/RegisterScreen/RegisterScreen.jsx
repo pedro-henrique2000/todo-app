@@ -12,16 +12,16 @@ export function RegisterScreen() {
 
     const auth = AuthApi()
 
-    useEffect(()=> {}, [mensagem, erro])
+    useEffect(() => { }, [mensagem, erro])
 
     async function handleSubmit(event) {
         event.preventDefault()
 
         try {
-            const response = await auth.register(email, password, confirmPassword, name)
+            await auth.register(email, password, confirmPassword, name)
             setErro('')
             setMensagem("Cadastrado com Sucesso")
-        } catch(err) {
+        } catch (err) {
             setMensagem('')
             setErro(err.response.data.message)
         }
@@ -29,48 +29,48 @@ export function RegisterScreen() {
 
 
     return (
-            <div className="form-container">
+        <div className="form-container">
             <header>
-                <p>Welcome!</p>
+                <h2>Welcome!</h2>
             </header>
             <main>
                 <form onSubmit={handleSubmit}>
-                    <Input 
-                        type="text" 
-                        name="Enter your Email" 
+                    <Input
+                        type="text"
+                        name="Enter your Email"
                         label="Email"
                         handleChange={setEmail}
-                        value={email} 
+                        value={email}
                     />
 
-                    <Input 
-                        type="text" 
-                        name="Enter your Name" 
+                    <Input
+                        type="text"
+                        name="Enter your Name"
                         label="Name"
                         handleChange={setName}
-                        value={name} 
+                        value={name}
                     />
 
-                    <Input 
-                        type="password" 
-                        name="Enter your Password" 
+                    <Input
+                        type="password"
+                        name="Enter your Password"
                         label="Password"
                         handleChange={setPassword}
                         value={password}
                     />
 
-                    <Input 
-                        type="password" 
-                        name="Confirm Password" 
+                    <Input
+                        type="password"
+                        name="Confirm Password"
                         label="Confirm Password"
                         handleChange={setConfirmPassword}
                         value={confirmPassword}
                     />
                     {mensagem ? <p className="form-success">{mensagem}</p> : erro && <p className="form-alert">{erro}</p>}
-                    <button>Register</button>
+                    <button className="button">Register</button>
                 </form>
             </main>
         </div>
-        
+
     )
 }

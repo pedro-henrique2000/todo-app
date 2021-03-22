@@ -6,14 +6,14 @@ const httpClient = axios.create({
 
 export function AuthApi() {
     async function login(email, password) {
-        const response = await httpClient.post("/authenticate", {email, password})
+        const response = await httpClient.post("/authenticate", { email, password })
         return response.data
     }
 
     async function register(email, password, confirmPassword, name) {
-        const response = await httpClient.post("/register", {email, password, confirmPassword, name})
+        const response = await httpClient.post("/register", { email, password, confirmPassword, name })
         return response.data
     }
 
-    return {login, register}
+    return { login, register }
 }

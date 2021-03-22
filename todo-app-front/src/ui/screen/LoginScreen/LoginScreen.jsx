@@ -17,15 +17,15 @@ export function LoginScreen() {
     let history = useHistory()
 
     if (isLogged) {
-        return <Redirect to="/tasks" />
+        return <Redirect to="/dashboard" />
     }
 
     async function handleSubmit(event) {
         event.preventDefault()
         try {
-            const { email } = await auth.login(username, password)
+            await auth.login(username, password)
             createToken(username, password)
-            history.push("/tasks")
+            history.push("/dashboard")
         } catch (err) {
             setErro(err.response.data.message)
         }
@@ -34,14 +34,14 @@ export function LoginScreen() {
     return (
         <div className="form-container">
             <header>
-                <p>Welcome Back!</p>
+                <h2>Welcome Back!</h2>
             </header>
             <main>
                 <form onSubmit={handleSubmit}>
                     <Input
                         type="text"
-                        name="username"
-                        label="username"
+                        name="Username"
+                        label="Username"
                         handleChange={setUsername}
                         value={username}
                     />
@@ -54,7 +54,7 @@ export function LoginScreen() {
                         value={password}
                     />
                     {erro && <p className="form-alert">{erro}</p>}
-                    <button>Login</button>
+                    <button className="button">Login</button>
                 </form>
             </main>
 

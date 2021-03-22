@@ -1,4 +1,4 @@
-.task-container{
+.task-container {
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -10,16 +10,15 @@
     min-width: 200px;
 }
 
-.task-container header {
-    border-bottom: 1px solid black;
+.task-container:hover {
+    transform: scale(1.10);
 }
 
 .urgent {
     color: crimson;
-    border-bottom: 1px solid crimson;
 }
 
-.task-container header span {
+.task-container header h2 {
     font-weight: 700;
 }
 
